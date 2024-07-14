@@ -37,19 +37,19 @@ const sidebarMenuItems: TwitterSideBarButton[] = [
 ]
 export default function Home() {
   return (
-    <div className="grid grid-cols-12 w-screen px-48 bg-black text-white">
-      <div className="col-span-3">
-        <div className="h-fit text-4xl hover:bg-gray-600 rounded-full cursor-pointer transition-all">
+    <div className="grid grid-cols-12 h-screen w-screen px-48 text-white">
+      <div className="col-span-3 pt-8 ml-20">
+        <div className="h-fit w-fit text-2xl hover:bg-gray-600 rounded-full cursor-pointer transition-all p-2">
           <BsTwitter color="white" />
         </div>
-        <div className="mt-4 text-2xl font-semibold pr-4 h-screen">
+        <div className="mt-2 text-xl font-semibold pr-4 h-screen">
           <ul>
             {sidebarMenuItems.map((item) => (
               <li
                 key={item.title}
                 className="flex gap-2 justify-start items-center hover:bg-gray-800 rounded-full px-5 py-2 w-fit cursor-pointer mt-2"
               >
-                <span>{item.icon}</span>
+                <span className="text-2xl">{item.icon}</span>
                 <span>{item.title}</span>
               </li>
             ))}
