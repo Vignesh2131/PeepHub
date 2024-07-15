@@ -25,12 +25,18 @@ function initServer() {
             typeDefs: `
         type Query{
         sayHello:String
+        sayMyName(name:String):String
         }
         `,
             resolvers: {
-                Query: { sayHello: () => `Hello from GraphQL` },
+                Query: {
+                    sayHello: () => `Hello from GraphQL`,
+                    sayMyName: (parent, { name }) => null,
+                },
             }
         });
+        //TO get data - query
+        //to send data - mutation
         yield graphqlServer.start();
         app.use("/graphql", (0, express4_1.expressMiddleware)(graphqlServer));
         return app;
